@@ -49,7 +49,6 @@ function handleUserInput(e) {
 
         if (gameState.currentIndex === PI_10.length) {
             updateGameStatus('クリア');
-            alert('クリア！');
             document.removeEventListener('keydown', handleUserInput);
         }
     }
