@@ -10,7 +10,7 @@ const gameState = {
 };
 
 // ゲームの開始
-function start10() {
+function start() {
     const start10Button = document.getElementById('start-10');
     start10Button.style.display = 'none'; // スタートボタンを非表示にする
 
@@ -64,7 +64,7 @@ function updateGameStatus(status) {
 function init() {
     updateGameStatus('待機中');
     const startButton = document.getElementById('start-10');
-    startButton.addEventListener('click', start10);
+    startButton.addEventListener('click', start);
 }
 
 // ゲームの開始
