@@ -23,17 +23,17 @@ function start() {
 
 // 画面に円周率の数字を表示する関数
 function displayDigits() {
-    const digitsDisplay = document.getElementById('digits');
-    digitsDisplay.innerHTML = '';
+  const digitsDisplay = document.getElementById('digits');
+  digitsDisplay.innerHTML = '';
 
-    for (let i = 0; i <= gameState.currentIndex; i++) {
-        const digit = document.createElement('div');
-        digit.textContent = piDisplay.charAt(i);
-        if (i === gameState.currentIndex) {
-            digit.classList.add('current-digit');
-        }
-        digitsDisplay.appendChild(digit);
+  for (let i = 0; i < PI_1000.length; i++) {
+    const digit = document.createElement('div');
+    digit.textContent = PI_1000.charAt(i);
+    if (i === gameState.currentIndex) {
+      digit.classList.add('current-digit');
     }
+    digitsDisplay.appendChild(digit);
+  }
 }
 
 // ユーザーの入力を処理する関数
