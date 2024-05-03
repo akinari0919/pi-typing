@@ -35,7 +35,7 @@ h1 {
   color: #666;
 }
 
-#start-10 {
+.start-button {
   padding: 10px 20px;
   font-size: 1em;
   background-color: #4169e1;
@@ -45,6 +45,6 @@ h1 {
   transition: background-color 0.3s;
 }
 
-#start-10:hover {
+.start-button:hover {
   background-color: #2a4ead;
 }
