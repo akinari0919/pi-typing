@@ -11,8 +11,8 @@ const gameState = {
 
 // ゲームの開始
 function start() {
-    const start10Button = document.getElementById('start-10');
-    start10Button.style.display = 'none'; // スタートボタンを非表示にする
+    const startButton = document.getElementById('start-10');
+    startButton.style.display = 'none'; // スタートボタンを非表示にする
 
     gameState.currentIndex = 0;
     gameState.userInput = '';
