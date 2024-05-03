@@ -3,20 +3,20 @@ const PI_1000 = "3.1415926535897932384626433832795028841971693993751058209749445
 
 // ゲームの状態を管理するオブジェクト
 const gameState = {
-    currentIndex: 0,
-    userInput: '',
+  currentIndex: 0,
+  userInput: '',
 };
 
 // ゲームの開始
 function start() {
-    const startButton = document.getElementById('start-button');
-    startButton.style.display = 'none'; // スタートボタンを非表示にする
+  const startButton = document.getElementById('start-button');
+  startButton.style.display = 'none'; // スタートボタンを非表示にする
 
-    gameState.currentIndex = 0;
-    gameState.userInput = '';
-    updateGameStatus('進行中');
-    displayDigits();
-    document.addEventListener('keydown', handleUserInput);
+  gameState.currentIndex = 0;
+  gameState.userInput = '';
+  updateGameStatus('進行中');
+  displayDigits();
+  document.addEventListener('keydown', handleUserInput);
 }
 
 // 画面に円周率の数字を表示する関数
@@ -36,33 +36,33 @@ function displayDigits() {
 
 // ユーザーの入力を処理する関数
 function handleUserInput(e) {
-    const inputDisplay = document.getElementById('user-input');
-    const currentDigit = PI_1000.charAt(gameState.currentIndex);
+  const inputDisplay = document.getElementById('user-input');
+  const currentDigit = PI_1000.charAt(gameState.currentIndex);
 
-    if (e.key === currentDigit) {
-        gameState.userInput += e.key;
-        gameState.currentIndex++;
-        inputDisplay.textContent = ''; // 入力した桁を非表示にする
-        displayDigits();
+  if (e.key === currentDigit) {
+    gameState.userInput += e.key;
+    gameState.currentIndex++;
+    inputDisplay.textContent = ''; // 入力した桁を非表示にする
+    displayDigits();
 
-        if (gameState.currentIndex === PI_1000.length) {
-            updateGameStatus('クリア');
-            document.removeEventListener('keydown', handleUserInput);
-        }
+    if (gameState.currentIndex === PI_1000.length) {
+      updateGameStatus('クリア');
+      document.removeEventListener('keydown', handleUserInput);
     }
+  }
 }
 
 // ゲームの状態を更新する関数
 function updateGameStatus(status) {
-    const gameStatusDisplay = document.getElementById('game-status');
-    gameStatusDisplay.textContent = status;
+  const gameStatusDisplay = document.getElementById('game-status');
+  gameStatusDisplay.textContent = status;
 }
 
 // ゲームの初期化
 function init() {
-    updateGameStatus('待機中');
-    const startButton = document.getElementById('start-button');
-    startButton.addEventListener('click', start);
+  updateGameStatus('待機中');
+  const startButton = document.getElementById('start-button');
+  startButton.addEventListener('click', start);
 }
 
 // ゲームの開始
