@@ -1,1 +1,1 @@
-https://pi-typing.web.app/
+https://pi-typing.web.app
